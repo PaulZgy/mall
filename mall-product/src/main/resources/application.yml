@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.56.128:3306/mall_pms?useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tPsWQyRDPPL94bvsyef
+      secret-key: 3h1sYrm08PZAd5tvHGkf10IlpYpuKh
+      oss:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+  jackson:
+    date-format: yyyy-MM-DD HH:mm:ss
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+server:
+  port: 10000
+logging:
+  level:
+    cn.highsheep.mall: debug
